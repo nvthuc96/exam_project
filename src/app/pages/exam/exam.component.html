@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Exam List</h4>
+      </div>
+      <div class="card-body">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                ID
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Numbers
+              </th>
+              <th>
+                Time
+              </th>
+              <th class="text-right">
+                Action
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let exam of examList">
+                <td>
+                  {{ exam.stt }}
+                </td>
+                <td>
+                  {{ exam.name }}
+                </td>
+                <td>
+                  {{ exam.numbers }}
+                </td>
+                <td>
+                  {{ exam.time }}
+                </td>
+                <td class="text-right">
+                  <button>View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+

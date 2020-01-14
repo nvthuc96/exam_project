@@ -1,0 +1,44 @@
+<h4>Add Course</h4>
+<style>
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<div [formGroup]="courseForm" class="flex-container">
+  <label>
+    Name:
+    <input type="text" formControlName="name" />
+    <span
+      *ngIf="
+        courseForm.get('name').invalid && courseForm.get('name').touched
+      "
+      >Tên không được để trống</span
+    >
+  </label>
+
+  <label>
+    Numbers:
+    <input type="text" formControlName="numbers" />
+  </label>
+
+  <label>
+    Time:
+    <!-- <form>
+      <mat-form-field>
+        <mat-label>Time </mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="time">
+          <mat-option *ngFor="let time of times" [value]="time.value">
+            {{ time.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form> -->
+    <input type="text" formControlName="time" />
+  </label>
+</div>
+
+<button class="btn" type="submit"
+class="btn btn-primary btn-round"
+(click)="addCourse()">Submit</button>

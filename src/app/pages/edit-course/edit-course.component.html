@@ -1,0 +1,33 @@
+<h4>Edit Course</h4>
+<style>
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  </style>
+<div [formGroup]="courseForm" class="flex-container ">
+  <label>
+    Name:
+    <input type="text" formControlName="name" />
+    <span
+      *ngIf="
+        courseForm.get('account').invalid && courseForm.get('name').touched
+      "
+      >Tên không được để trống</span
+    >
+  </label>
+
+  <label>
+    Numbers:
+    <input type="text" formControlName="numbers" />
+  </label>
+
+  <label>
+    Time:
+    <input type="text" formControlName="time" />
+  </label>
+</div>
+
+<button class="btn" type="submit"
+class="btn btn-primary btn-round"
+(click)="editCourse()" routerLink="/course">Submit</button>

@@ -1,0 +1,34 @@
+<h4>Edit Question</h4>
+<style>
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<div [formGroup]="questionForm" class="flex-container">
+  <label>
+    Name:
+    <input type="text" formControlName="name" />
+    <span
+      *ngIf="
+        questionForm.get('name').invalid && questionForm.get('name').touched
+      "
+      >Tên không được để trống</span
+    >
+  </label>
+
+  <label>
+    Course:
+    <input type="text" formControlName="course" />
+  </label>
+
+  <label>
+    Difficult:
+    <input type="text" formControlName="difficult" />
+  </label>
+</div>
+
+<button class="btn" type="submit"
+class="btn btn-primary btn-round"
+(click)="editQuestion()" routerLink="/question">Submit</button>

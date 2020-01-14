@@ -1,0 +1,7 @@
+<h1>Users</h1>
+
+<button routerLink="/adduser">Add User</button>
+
+<ul *ngFor="let user of users">
+  <li [routerLink]="'/admin/users/' + user.id">{{ user.name }}</li>
+</ul>

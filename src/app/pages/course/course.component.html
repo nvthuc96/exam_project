@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Course List</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+            <button
+              type="submit"
+              class="btn btn-primary btn-round"
+              (click)="addCourse()"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+        <table class="table">
+          <thead class=" text-primary">
+            <th>
+              STT
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Numbers
+            </th>
+            <th>
+              Time
+            </th>
+            <th>
+              Edit
+            </th>
+            <th class="text-right">
+              Delete
+            </th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let course of courses">
+              <td>
+                {{ course.idCourse }}
+              </td>
+              <td>
+                {{ course.nameCourse }}
+              </td>
+              <td>
+                {{ course.quantityQuestion }}
+              </td>
+              <td>
+                {{ course.time }}
+              </td>
+              <td>
+                <!-- <button routerLink="/editcourse">Edit</button> -->
+                <img
+                  src="assets/img/edit.png"
+                  alt="edit"
+                  height="32"
+                  width="32"
+                  routerLink="/editcourse"
+                />
+              </td>
+              <td class="text-right">
+                <img
+                  src="assets/img/delete.png"
+                  alt="del"
+                  height="25"
+                  width="24"
+                  (click)="deleteCourse(course.id)"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
